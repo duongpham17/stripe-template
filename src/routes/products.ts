@@ -5,6 +5,6 @@ const products = require('../controller/products');
 const router: IRouter = express.Router();
 
 router.get('/', products.getProducts);
-router.get('/:title', products.getProduct);
+router.get('/:name', products.getProduct);
 
 export default router;

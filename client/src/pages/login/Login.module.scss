@@ -1,0 +1,42 @@
+.container{
+    form{
+        max-width: 280px;
+        margin: 10rem auto;
+
+        input, button{
+            width: 100%;
+            border: 2px solid var(--main-clr-lightgrey);
+            padding: 0.5rem;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            margin: 0.3rem 0;
+            &:hover{
+                border-color: var(--main-clr);
+            }
+        }
+    
+
+        .emailsent{
+            margin-bottom: 1rem;
+            p{
+                text-align: center;
+            }
+        }
+
+        button{
+            &:hover{
+                background-color: black;
+               *{
+                    color: white;
+               }
+            }
+        }
+
+        small{
+            color: var(--main-clr-red);
+            text-align: center;
+            display: block;
+            margin: 0.5rem 0;
+        }
+    }
+}

@@ -10,9 +10,9 @@ exports.getProducts = asyncBlock(async(req: Request, res: Response, next: NextFu
 });
 
 exports.getProduct = asyncBlock(async(req: Request, res: Response, next: NextFunction): Promise<void> => {
-    const title = req.params.title;
+    const nameParams = req.params.name;
 
-    const product = products.find(el => el.name === title && el);
+    const product = products.find(({name}:{name: string}) => name === nameParams && name);
 
     res.status(200).json({
         status: "success",

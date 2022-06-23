@@ -1,0 +1,11 @@
+.container{
+    button, a{
+        border: 1px solid var(--main-clr-lightgrey);
+        padding: 0.2rem 1rem;
+        border-radius: 50px;
+        &:hover{
+            background-color: black;
+            color: white;
+        }
+    }
+}

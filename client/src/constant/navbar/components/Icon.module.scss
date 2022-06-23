@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    border-bottom: 2px solid transparent;
+    padding: 0.5rem;
+    position: relative;
+    margin: 0 0.2rem;
+
+    &:hover{
+        border-color: var(--main-clr-selected);
+    }
+
+    svg{
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,35 @@
+.container {
+    position: fixed;
+    z-index: 101;
+    margin-top: 3rem;
+    left: 0;
+    right: 0;
+
+    .alert{
+        width: 130px;
+        margin: auto;
+        background-color: black;
+        text-align: center;
+        padding: 0.5rem;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+        border-radius: 5px;
+        font-size: 0.8rem;
+        animation: SlideDown 1.2s ease;
+        color: white;
+
+        &:hover{
+            border-color: var(--main-selected);
+        }
+
+        @keyframes SlideDown {
+            0% {
+                transform: translateY(-100%);
+            }
+            50% {
+                transform: translateY(0%);
+            }
+        }
+    }
+
+}

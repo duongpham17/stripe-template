@@ -1,0 +1,48 @@
+.container{
+
+    .cover{
+        background-color: rgb(136, 136, 136);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+    }
+
+    .sidebar{
+        position: fixed;
+        background-color: white;
+        right: 0;
+        top: 0;
+        border-left: 1px solid var(--main-clr-lightgrey);
+        min-height: 100vh;
+        width: 0;
+        max-width: 200px;
+        animation: slidein 0.5s linear forwards;
+        overflow-y: auto;
+        padding: 0.2rem;
+        z-index: 1000;
+
+        .closeBtn{
+            width: 100%;
+            font-size: 1.3rem;
+            border-radius: 5px;
+
+            &:hover{
+                background-color: black;
+                color: white;
+            }
+        }
+    }
+
+    @keyframes slidein {
+        from{
+            width: 0;
+        }
+        to{
+            width: 100%;
+        }
+    }
+}
