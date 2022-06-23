@@ -1,0 +1,82 @@
+.container{
+
+    .element{
+        display: grid;
+        grid-template-columns: 50px 1fr 100px;
+        grid-template-areas: "image name price";
+        grid-gap: 0.3rem;
+
+        .image{
+            grid-area: image;
+            img{
+                width: 100%;
+                height: 70px;
+                border-radius: 5px;
+            }
+        }
+
+        .name{
+            grid-area: name;
+            width: 100%;
+        }
+
+        .price{
+            grid-area: price;
+            text-align: right;
+            p{
+                margin-bottom: 0.2rem;
+            }
+        }
+    }
+
+    .total{
+        border-top: 1px solid var(--main-clr-lightgrey);
+        border-bottom: 1px solid var(--main-clr-lightgrey);
+        padding: 0.5rem 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .delivery{
+        button{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin: 0.2rem 0;
+            padding: 0.3rem 0;
+
+            &:hover{
+                span{
+                    border: 2px solid black
+                }
+            }
+        }
+        p{
+            text-align: left;
+        }
+        .box{
+            width: 20px;
+            height: 20px;
+            border: 1px double var(--main-clr-lightgrey);
+            display: block;
+        }
+        .boxSelected{
+            background-color: var(--main-clr-selected);
+        }
+    }
+
+}
+
+.completed{
+    div{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.2rem 0;
+    }
+
+    .grandTotal{
+        border-top: 1px solid var(--main-clr-lightgrey)
+    }
+}

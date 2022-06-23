@@ -9,3 +9,5 @@ export const generateid = (times = 2): string => {
 export const shortenString = (word: string, length?: number): string => `${word.substring(0, length ? length : 20)}...`;
 
 export const firstCapital = (word: string): string => word.split(" ").map((w: string) => w.substring(0, 1).toUpperCase() + w.substring(1)).join(" ");
+
+export const totalBasket = (item: []):number => item.reduce((acc, cur:{price: number, quantity: number}) => acc + (cur.price * cur.quantity), 0);

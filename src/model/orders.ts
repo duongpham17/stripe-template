@@ -26,7 +26,6 @@ export type Delivery = {
 }
 
 export interface OrdersInput {
-    type: string,
     user: string,
     email: string,
     status: string,
@@ -42,10 +41,6 @@ export interface UserDocument extends OrdersInput, mongoose.Document {
 };
 
 const ordersSchema = new mongoose.Schema({
-    type: {
-        type: String,
-        enum: ["user", "guest"]
-    },
     user: {
         type: String
     },

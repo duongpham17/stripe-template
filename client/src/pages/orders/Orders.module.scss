@@ -1,0 +1,76 @@
+.container{
+    .element{
+        border-bottom: 1px solid var(--main-clr-lightgrey);
+
+        .header{
+            button{
+                padding: 0.2rem 0.5rem;
+                width: 100%;
+                p{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    line-height: 1.3rem;
+                }
+
+                &:hover{
+                    background-color: black;
+                    *{
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .openContainer{            
+            padding: 0.2rem 0.5rem;
+
+            b{
+                display: block;
+                margin-top: 0.5rem;
+            }
+
+            .address{
+                p{
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+
+            .basket{
+                .item{
+                    display: grid;
+                    grid-template-columns: 50px 1fr 100px;
+                    grid-template-areas: "image name price";
+                    margin: 0.3rem 0;
+                    border-bottom: 1px solid var(--main-clr-lightgrey);
+                    padding: 0.2rem 0;
+                    .image{
+                        grid-area: image;
+                        margin-right: 0.5rem;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .name{
+                        grid-area: name;
+                    }
+                    .price{
+                        grid-area: price;
+                        p{
+                            text-align: right;
+                            line-height: 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .selected{
+        border: 3px solid black;
+    }
+
+}

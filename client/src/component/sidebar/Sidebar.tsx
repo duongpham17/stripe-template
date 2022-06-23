@@ -15,8 +15,8 @@ const Sidebar = ({children, icon}: Types) => {
     <div className={styles.container}>
       <div onClick={onOpen}>{icon}</div>                                                  
       { open &&
-        <div className={styles.cover}>
-          <div className={styles.sidebar}>
+        <div className={styles.cover} onClick={onOpen}>
+          <div className={styles.sidebar} onClick={e => e.stopPropagation()}>
             <button className={styles.closeBtn} onClick={onOpen}>&#x2190;</button>
             {children}
           </div>

@@ -1,0 +1,36 @@
+.container{
+    form{
+        input{
+            display: block;
+            border: 1px solid var(--main-clr-lightgrey);
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+
+        small{
+            color: var(--main-clr-red);
+        }
+
+        .box{
+            margin: 0.4rem 0;
+        }
+
+        .oneline{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            gap: 10px;
+
+            div{
+                width: 100%;
+            }
+        }
+    }
+}
+
+.completed{
+    p{
+        line-height: 1.4rem;
+    }
+}

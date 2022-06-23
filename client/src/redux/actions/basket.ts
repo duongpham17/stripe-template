@@ -31,8 +31,6 @@ export const basket_add = (item: Product):Thunk => async dispatch => {
         localStorage.setItem("basket", JSON.stringify(newBasket))
     };
 
-    console.log(newBasket);
-
     dispatch({
         type: BASKET,
         payload: newBasket
@@ -50,5 +48,34 @@ export const basket_get = (): Thunk => async dispatch => {
     dispatch({
         type: BASKET,
         payload: newBasket
+    });
+};
+
+export const basket_quantity = (type: "increment" | "decrement" | "remove", index: number): Thunk => async dispatch => {
+    let basket: [] | string | null = localStorage.getItem("basket");
+
+    if(!basket) return;
+
+    const newBasket = JSON.parse(basket);
+
+    if(type === "increment") newBasket[index].quantity += 1;
+    if(type === "decrement") newBasket[index].quantity === 1 ? newBasket.splice(index, 1) : newBasket[index].quantity -= 1;
+    if(type === "remove") newBasket.splice(index, 1);
+
+    localStorage.setItem("basket", JSON.stringify(newBasket));
+
+    dispatch({
+        type: BASKET,
+        payload: newBasket
+    });
+};
+
+
+export const basket_clear = (): Thunk => async dispatch => {
+    localStorage.removeItem("basket");
+
+    dispatch({
+        type: BASKET,
+        payload: []
     });
 };

@@ -1,0 +1,14 @@
+.container{
+    a{
+        width: 100%;
+        text-align: center;
+        display: block;
+        padding: 0.5rem;
+        border-bottom: 1px solid var(--main-clr-lightgrey);
+
+        &:hover{
+            background-color: black;
+            color: white;
+        }
+    }
+}

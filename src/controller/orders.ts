@@ -22,24 +22,24 @@ exports.orderGet = async (req: InjectUserToRequest, res: Response) => {
 
 exports.orderCreate = async (req: Request, res: Response) => {
 
-    const orders = req.body.orders;
+    const order = req.body.order;
 
     const paymentIntent = await stripe.paymentIntents.create({
-      amount: Number(orders.total * 100).toFixed(0),
+      amount: Number(order.total * 100).toFixed(0),
       currency: 'gbp',
       payment_method_types: ['card']
     });
 
     const stripe_client_secret = paymentIntent.client_secret;
-    const email = orders.address.email_address;
-    const total = orders.total.toFixed(2);
+    const email = order.address.email_address;
+    const total = order.total.toFixed(2);
 
-    await Orders.create({...orders, stripe_client_secret, total });
+    await Orders.create({...order, stripe_client_secret, total, email });
 
     res.status(200).json({
       status: "success",
       clientSecret: stripe_client_secret,
-      amount: orders.total
+      amount: order.total
     });
 };
 

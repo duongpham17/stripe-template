@@ -14,3 +14,6 @@ export const BASKET = "BASKET";
 // Products
 export const PRODUCTS = "PRODUCTS";
 export const PRODUCT = "PRODUCT";
+
+// Orders
+export const ORDERS = "ORDERS";
